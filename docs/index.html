@@ -1,1 +1,64 @@
-<html></html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="./node_modules/fhirclient/fhir-client.min.js"></script>
+        <script src="./node_modules/vis/dist/vis.min.js"></script>
+        <script src="https://alunahealth.github.io/MedicationTimeline/js/index.js"></script>
+        <link href="./node_modules/normalize.css/normalize.css" rel="stylesheet" type="text/css">
+        <link href="./node_modules/vis/dist/vis.min.css" rel="stylesheet" type="text/css">
+        <link href="https://alunahealth.github.io/MedicationTimeline/css/main.css" rel="stylesheet" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    </head>
+    <body>
+      <header class="main-header">
+        <div class="main-logo">
+          <img src="https://alunahealth.github.io/MedicationTimeline/aluna_logo.svg" alt="Aluna Medication timeline" class="main-logo__img">
+          <div class="main-logo__text">
+            Aluna <span class="main-logo__text--colored">Medication timeline</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+
+        <section class="patient-info">
+          <div class="container">
+            <ul class="patient-info__items">
+              <li class="patient-info__item">
+                <div class="patient-info__title">Name:</div>
+                <div class="patient-info__text" id="name"></div>
+              </li>
+              <li class="patient-info__item">
+                <div class="patient-info__title">Gender:</div>
+                <div class="patient-info__text" id="gender"></div>
+              </li>
+              <li class="patient-info__item">
+                <div class="patient-info__title">Birth Date:</div>
+                <div class="patient-info__text" id="birthDate"></div>
+              </li>
+              <li class="patient-info__item">
+                <div class="patient-info__title">Rec. ID:</div>
+                <div class="patient-info__text" id="recId"></div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="container">
+          <h1 class="main-title">Medication Timeline</h1>
+          <div id="timeline" class="timeline"></div>
+        </div>
+
+      </main>
+
+      <footer class="main-footer">
+        <div class="container">
+          <div class="main-footer__text">
+            © 2018 Aluna Solutions <a href="" class="main-footer__link">https://github.com/AlunaSolutions</a>
+          </div>
+        </div>
+      </footer>
+    </body>
+</html>
