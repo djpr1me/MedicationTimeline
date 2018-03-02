@@ -1,5 +1,7 @@
 # Aluna Medication Timeline
 
+![Image of Aluna Medication Timeline](https://alunahealth.github.io/MedicationTimeline/Aluna_Medication_Timeline.png)
+
 How to setup the application:
 1. Clone https://github.com/AlunaHealth/MedicationTimeline/
 2. In the directory where the repository was cloned run "npm install" for installing required libraries
