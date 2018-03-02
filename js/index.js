@@ -6,7 +6,7 @@ $(document).ready(function() {
     ["MedicationOrder.medicationReference"]);
 
     $.when(patient, medications).done(function(patient, fetchedMedicationWithRef){
-          initTimeline(getMedicationsWithResolvedRef(fetchedMedicationWithRef)});
+          initTimeline(getMedicationsWithResolvedRef(fetchedMedicationWithRef));
           setPatientInfo(patient);
     });
   });
