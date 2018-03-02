@@ -1,18 +1,15 @@
-(function(window){
-  window.extractData = function() {
-    var ret = $.Deferred();
-    FHIR.oauth2.ready(function(smart){
-      var patient = smart.patient.read();
-      var medications = smart.patient.api.fetchAllWithReferences({type: "MedicationOrder"},
-      ["MedicationOrder.medicationReference"]);
+$(document).ready(function() {
 
-      $.when(patient, medications).done(function(patient, fetchedMedicationWithRef){
-          ret.resolve({patient: patient,
-            medications: getMedicationsWithResolvedRef(fetchedMedicationWithRef)});
-      });
+  FHIR.oauth2.ready(function(smart){
+    var patient = smart.patient.read();
+    var medications = smart.patient.api.fetchAllWithReferences({type: "MedicationOrder"},
+    ["MedicationOrder.medicationReference"]);
+
+    $.when(patient, medications).done(function(patient, fetchedMedicationWithRef){
+          initTimeline(getMedicationsWithResolvedRef(fetchedMedicationWithRef)});
+          setPatientInfo(patient);
     });
-    return ret.promise();
-  };
+  });
 
   function getMedicationsWithResolvedRef(fetchedMedicationWithRef){
     var medResults = fetchedMedicationWithRef[0];
@@ -29,15 +26,6 @@
      });
      return medicationsWithRefs;
   }
-})(window);
-
-$(document).ready(function() {
-  extractData().then(function(data){
-      var medications = data.medications;
-      var patient = data.patient;
-      initTimeline(medications);
-      setPatientInfo(patient);
-  });
 
   function initTimeline(medications){
     var container = document.getElementById('timeline');
