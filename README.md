@@ -1,6 +1,6 @@
 # Aluna Medication Timeline
 
-![Image of Aluna Medication Timeline](https://alunahealth.github.io/MedicationTimeline/Aluna_Medication_Timeline.png)
+![Image of Aluna Medication Timeline](https://raw.githubusercontent.com/AlunaGroup/MedicationTimeline/master/Aluna_Medication_Timeline.png)
 
 How to setup the application:
 1. Clone https://github.com/AlunaHealth/MedicationTimeline/
